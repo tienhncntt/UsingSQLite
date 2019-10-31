@@ -77,9 +77,9 @@ namespace UsingSQLite.ViewModels
             {
                 FlowerTypeID = SelectedFlower.FlowerTypeID,
                 FlowerName = FlowerName,
-                FlowerImage = FlowerImage,
+                FlowerImage = "flower.jpg",
                 Decription = Decription,
-                Price = int.Parse(Price)
+                Price = Convert.ToInt32(Price)
             };
             await App.Database.InsertFlower(flower);
 

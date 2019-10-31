@@ -13,7 +13,7 @@ namespace UsingSQLite.Views
 
         private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            var selectedFlowerType = sender as FlowerType;
+            var selectedFlowerType = e.SelectedItem as FlowerType;
             ViewListFlowerTypePageViewModel.Instance.SelectFlowerType(selectedFlowerType);
         }
     }

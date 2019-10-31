@@ -53,5 +53,10 @@ namespace UsingSQLite.Services
                 await _database.UpdateAsync(flower);
             }
         }
+
+        public Task<List<Flower>> GetListFlowerByFlowerType(int id)
+        {
+            return _database.Table<Flower>().Where(i => i.FlowerTypeID == id).ToListAsync();
+        }
     }
 }

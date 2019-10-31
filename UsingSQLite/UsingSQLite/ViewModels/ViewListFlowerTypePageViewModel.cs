@@ -41,7 +41,11 @@ namespace UsingSQLite.ViewModels
 
         public void SelectFlowerType(FlowerType flowerType)
         {
-            
+            var param = new NavigationParameters()
+            {
+                {"selectFlowerType", flowerType}
+            };
+            NavigationService.NavigateAsync("ViewListFlowerPage", param);
         }
     }
 }
