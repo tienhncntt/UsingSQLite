@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="UsingSQLite.Views.AddFlowerPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:prism="http://prismlibrary.com"
+    prism:ViewModelLocator.AutowireViewModel="True">
+    <StackLayout>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="7*" />
+            </Grid.ColumnDefinitions>
+            <Label
+                Grid.Row="0"
+                Grid.Column="0"
+                Text="Mã loại" />
+            <Picker
+                Title="Chọn loại hoa"
+                Grid.Row="0"
+                Grid.Column="1"
+                ItemDisplayBinding="{Binding FlowerTypeName}"
+                ItemsSource="{Binding ListFlowerType}"
+                SelectedItem="{Binding SelectedFlower}" />
+
+            <Label
+                Grid.Row="1"
+                Grid.Column="0"
+                Text="Tên hoa" />
+            <Entry
+                Grid.Row="1"
+                Grid.Column="1"
+                Text="{Binding FlowerName}" />
+
+            <Label
+                Grid.Row="2"
+                Grid.Column="0"
+                Text="Hình" />
+            <Entry
+                Grid.Row="2"
+                Grid.Column="1"
+                Text="{Binding FlowerImage}" />
+
+            <Label
+                Grid.Row="3"
+                Grid.Column="0"
+                Text="Giá bán" />
+            <Entry
+                Grid.Row="3"
+                Grid.Column="1"
+                Text="{Binding Price}" />
+
+            <Label
+                Grid.Row="4"
+                Grid.Column="0"
+                Text="Mô tả" />
+            <Entry
+                Grid.Row="4"
+                Grid.Column="1"
+                Text="{Binding Decription}" />
+
+            <Button
+                Grid.Row="5"
+                Grid.Column="0"
+                Command="{Binding AddFlowerCommand}"
+                Text="Thêm hoa" />
+
+            <Button
+                Grid.Row="5"
+                Grid.Column="1"
+                Command="{Binding DeleteFlowerCommand}"
+                Text="Xóa hoa" />
+
+        </Grid>
+    </StackLayout>
+</ContentPage>
